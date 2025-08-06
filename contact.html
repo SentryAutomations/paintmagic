@@ -67,6 +67,74 @@
             color: #e67e22;
         }
 
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 1rem 2rem;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .mobile-nav a:hover {
+            background: #f8f9fa;
+            color: #e67e22;
+        }
+
         /* Hero Section */
         .hero {
             padding: 120px 2rem 80px;
@@ -374,6 +442,7 @@
             margin-top: 1rem;
             color: #666;
             line-height: 1.6;
+            display: none;
         }
 
         .faq-toggle {
@@ -384,74 +453,6 @@
 
         .faq-item.active .faq-toggle {
             transform: rotate(45deg);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .mobile-menu.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .mobile-menu.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .mobile-nav li {
-            border-bottom: 1px solid #eee;
-        }
-
-        .mobile-nav a {
-            display: block;
-            padding: 1rem 2rem;
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
-
-        .mobile-nav a:hover {
-            background: #f8f9fa;
-            color: #e67e22;
         }
 
         /* Mobile Responsive */
@@ -701,6 +702,7 @@
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="#" class="active">Contact</a></li>
         </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -884,7 +886,7 @@
                         How much can I save compared to new cabinets?
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" style="display: none;">
+                    <div class="faq-answer">
                         Most customers save 60-80% compared to full cabinet replacement. Instead of spending $20,000-40,000+ on new cabinets, refinishing typically costs a fraction while achieving beautiful results.
                     </div>
                 </div>
@@ -894,7 +896,7 @@
                         How long does the process take?
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" style="display: none;">
+                    <div class="faq-answer">
                         The typical project takes 1-2 weeks from pickup to delivery, depending on the size and complexity of your kitchen. We'll provide a detailed timeline during your consultation.
                     </div>
                 </div>
@@ -904,7 +906,7 @@
                         What condition do my cabinets need to be in?
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" style="display: none;">
+                    <div class="faq-answer">
                         We can refinish most cabinet doors and drawer fronts as long as they're structurally sound. Even cabinets with wear, scratches, or outdated finishes can be transformed into beautiful, like-new pieces.
                     </div>
                 </div>
@@ -914,7 +916,7 @@
                         Do you provide the paint and materials?
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" style="display: none;">
+                    <div class="faq-answer">
                         Yes! Paint Magic supplies all paint, materials, and instructions needed for both the professional spray work and the trim painting you'll do at home. Everything is included in your quote.
                     </div>
                 </div>
@@ -924,7 +926,7 @@
                         What if I'm not satisfied with the results?
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" style="display: none;">
+                    <div class="faq-answer">
                         We guarantee your satisfaction! With over 21 years of experience and hundreds of happy customers, we stand behind our work. We won't consider the job complete until you're thrilled with the results.
                     </div>
                 </div>
